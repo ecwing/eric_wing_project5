@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
 .App {
   text-align: center;
 }
@@ -30,3 +32,95 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #a0c1b9;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 75px;
+}
+
+label {
+  padding: 10px;
+}
+
+input {
+  text-align: center;
+  border: none;
+  padding: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.task {
+list-style-type: square;
+}
+
+.event {
+  list-style-type: disc;
+
+}
+.reminder {
+list-style-type: circle;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+input[type="submit"] {
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  background-color: #706993 ;
+  /* 706993 70a0af */
+  cursor: pointer;
+  border: 0;
+  min-width: 120px;
+  color: #fff;
+  box-shadow: 5px 5px 5px 0 rgba(0,0,0,.26);
+  padding: 10px 5px;
+  border-radius: 8px;
+}
+
+button {
+    cursor: pointer;
+    display: inline;
+    border: 0;
+    min-width: 20px;
+    color: #fff;
+    background-color: #706993 ;
+    box-shadow: 5px 5px 5px 0 rgba(0,0,0,.26);
+    padding: 3px 5px;
+    border-radius: 8px;
+}
+
