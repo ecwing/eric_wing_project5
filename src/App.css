@@ -69,28 +69,48 @@ input {
 
 
 
+.explanation {
+  text-align: initial;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.results,
+.taskflex {
+  background: teal;
+}
 
-
-.task {
+.reminder {
 list-style-type: square;
 }
 
-.event {
+.task {
   list-style-type: disc;
 
 }
-.reminder {
+.event {
 list-style-type: circle;
+}
+
+.bullet {
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+  margin-top: 5px;
 }
 
 
 
 
+.taskflex {
+  display: flex;
+  justify-content: center;
+}
 
-
-
-
+.delete {
+  margin-left: 10px;
+}
 
 
 
@@ -114,7 +134,7 @@ input[type="submit"] {
 
 button {
     cursor: pointer;
-    display: inline;
+    /* display: inline; */
     border: 0;
     min-width: 20px;
     color: #fff;
@@ -124,3 +144,13 @@ button {
     border-radius: 8px;
 }
 
+footer {
+
+  background: black;
+  color: white;
+}
+
+footer p {
+  padding: 5px;
+  margin: 0;
+}
