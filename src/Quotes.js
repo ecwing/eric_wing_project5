@@ -16,6 +16,6 @@ class Art extends Component {
             params: {
                 t: wisdom
             }
-        }
+        })
     }
 }

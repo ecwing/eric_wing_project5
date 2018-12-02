@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import firebase from "./firebase";
 import Header from "./Header";
+import MotivationalGif from "./Giphy";
 import Footer from "./Footer";
 
 //reference to the root of the database
@@ -92,8 +93,9 @@ class App extends Component {
 
     return (
       <div className="App">
+      <MotivationalGif />
 
-      <Header />
+      <Header />  
 
         <form action="" onSubmit={this.handleSubmit}>
         <div>

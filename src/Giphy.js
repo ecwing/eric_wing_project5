@@ -1,42 +1,43 @@
+import React, {Component, Fragment} from 'react';
+import axios from 'axios';
 
-import React, { Component } from 'react';
-import './App.css';
+// API KEY FOR GIPHY
+const api_key = 'pX65UNlFkSNlNESWjjpoX92eMzUcwZEs';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
+class MotivationalGif extends Component {
+  constructor() {
+    super()
     this.state = {
-      term: '',
-      img: ''
-    };
+      img: "",
+      description: ""
+    }
   }
 
-  onChange = (event) => {
-    this.setState({ term: event.target.value });
-  }
-  handleSubmit = (event) => {
-    event.preventDefault();
-    const api_key = 'dc6zaTOxFJmzC';
-    const url = `http://api.giphy.com/v1/gifs/search?q=${this.state.term}&api_key=${api_key}`;
-    fetch(url)
-      .then(response => response.json())
-      .then(data => this.setState({ term:'', img: data.data[0].images.fixed_height.url }))
+  
+
+
+  fetchRandomGif = () => {
+    console.log('fuck you');
+
+    const url = `http://api.giphy.com/v1/gifs/random?tag=motivate&api_key=${api_key}`;
+    axios.get(url)
+      .then(({ data }) =>
+        this.setState({ 
+          img: data.data.images.fixed_height.url,
+          description: data.data.title
+        })
+      )
       .catch(e => console.log('error', e));
   }
 
   render() {
     return (
-      <div className="App">
-        <form onSubmit={this.handleSubmit}>
-          <input value={this.state.term} onChange={this.onChange} />
-          <button>Search!</button>
-        </form>
-        <img src={this.state.img} height="200" alt={this.state.term} />
-      </div>
-    );
+      <Fragment>
+        <button onClick={this.fetchRandomGif}>Motivate Me!</button>
+        <img src={this.state.img} alt={this.state.description}/>
+      </Fragment>
+    )
   }
-}
 
-export default App;
-view raw
-App.js hosted with ❤ by GitHub
+}
+export default MotivationalGif;
