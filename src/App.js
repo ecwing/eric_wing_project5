@@ -17,7 +17,7 @@ class App extends Component {
       task: "",
       term: "",
       img: "",
-      toDo: []
+      toDo: {}
     }
   }
 
@@ -63,12 +63,14 @@ class App extends Component {
     //prevents form submit from reloading the page
     const newTask = {
       task: this.state.task,
+      type: this.state.bullet,
       datePosted: new Date()
     };
     /* Send the data to Firebase */
     dbRef.push(newTask)    //This function clears the form/inputs
     this.setState({
       task: "",
+      value: "",
       bullet: ""
     })
   }
@@ -86,6 +88,8 @@ class App extends Component {
   };
 
   render() {
+    const todos = Object.entries(this.state.toDo);
+
     return (
       <div className="App">
 
@@ -117,19 +121,19 @@ class App extends Component {
         type="submit" value="Add Bullet" />
         </form>
         {/* want to show total tasks  */}
-        <h3>Total # of Tasks: {this.state.toDo.length}</h3>
+        <h3>Total # of Tasks: {todos.length}</h3>
 
           <section className="add-item">
             {
-              Object.entries(this.state.toDo).map((item) => {
+              todos.map(([id, item]) => {
                 console.log(item);
                 return (
-                  <div key={item[0]} className="results">
+                  <div key={id} className="results">
                     <ul className="taskflex">
                       {/* {renders list of tasks to complete} */}
-                      <li className={this.state.bullet}>{item[1].task}</li>
+                      <li className={item.type}>{item.type} - {item.task}</li>
                     <button 
-                      id={item[0]}
+                      id={id}
                       className="delete" 
                       onClick={this.deleteItem}>X</button>
                     </ul>
