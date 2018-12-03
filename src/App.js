@@ -77,6 +77,7 @@ class App extends Component {
 
     return (
       <div className="App">
+
       <Header />  
 
         <form action="" onSubmit={this.handleSubmit}>
@@ -99,7 +100,7 @@ class App extends Component {
             value={this.state.bullet}>
             <option value="" disabled className="placeholder">Select A Type</option>
             <option value="task">Task</option>
-            <option value="note">Notes</option>
+            <option value="note">Note</option>
             <option value="event">Event</option>
           </select>
         </div>
@@ -107,7 +108,7 @@ class App extends Component {
         type="submit" value="Add Bullet" />
         </form>
         {/* want to show total tasks  */}
-        <h3>Total # of Tasks: {todos.length}</h3>
+        <h3>Total # of Items: {todos.length}</h3>
 
           <section className="addItem">
             {

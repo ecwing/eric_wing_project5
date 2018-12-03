@@ -1,19 +1,61 @@
-@import url('https://fonts.googleapis.com/css?family=Pacifico|Patrick+Hand');
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Patrick+Hand|Muli');
+
+
 
 .App {
   text-align: center;
+  flex: 1 0 auto;
+}
+
+html, 
+body {
+  height: 100%;
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+font-family: 'Patrick Hand', cursive;
   background: #a0c1b9;
+}
+
+header img {
+  height: 100px;
+  width: auto;
+}
+
+.titleFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Acessibility skip link styling */
+/* ============================== */
+.skip-link {
+    position: absolute;
+    left: -1000px;
+    top: 5px;
+    z-index: 999;
+    background: white;
+    color: black;
+}
+
+.skip-link:focus {
+    left: 0;
+}
+
+.main-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: auto;
 }
 
 h1 {
   font-family: 'Pacifico', cursive;
   font-size: 75px;
-  margin: 10px;
+  margin: 10px 0;
 }
+
+
 
 label {
   padding: 10px;
@@ -21,8 +63,10 @@ label {
 
 input {
   text-align: center;
+  font-family: 'Patrick Hand', cursive;
   border: none;
   padding: 2px;
+
 }
 
 .explanation {
@@ -53,16 +97,17 @@ list-style-type: circle;
 }
 
 
+
 .bullet {
   display: block;
   margin-left: 10px;
   padding: 10px;
-  margin-top: 5px;
+  /* margin-top: 5px; */
 }
 
 .addItem {
   border-radius: 5px;
-  border-top: 5px solid teal;
+  border-top: 5px solid #706993;
   background: #fff;
   padding: 20px 20px;
   box-shadow: 5px 5px 5px 0 rgba(0,0,0,.26);
@@ -76,6 +121,14 @@ list-style-type: circle;
   justify-content: space-between;
 }
 
+select {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+select,
 .taskflex li,
 button {
 font-family: 'Patrick Hand', cursive;
@@ -89,7 +142,7 @@ input[type="submit"] {
   display: block;
   margin: 0 auto;
   margin-top: 10px;
-  background-color: #706993 ;
+  background-color: #706993;
   /* 706993 70a0af */
   cursor: pointer;
   border: 0;
@@ -108,7 +161,6 @@ input[type="submit"] {
 
 button {
     cursor: pointer;
-
     border: 0;
     min-width: 20px;
     color: black;
@@ -116,6 +168,16 @@ button {
     /* box-shadow: 5px 5px 5px 0 rgba(0,0,0,.26); */
     padding: 3px 5px;
     border-radius: 8px;
+}
+
+button.hitMe {
+  cursor: pointer;
+  padding: 10px 5px;
+  margin-bottom: 10px;
+  border: 0;
+  color: white;
+  background-color: #706993;
+  box-shadow: 5px 5px 5px 0 rgba(0,0,0,.26);
 }
 
 footer {
@@ -127,3 +189,24 @@ footer p {
   padding: 5px;
   margin: 0;
 }
+
+@keyframes animationFrames{
+  0% {
+    opacity:0;
+    transform:  translate(0px,-25px)  ;
+  }
+  100% {
+    opacity:1;
+    transform:  translate(0px,0px)  ;
+  }
+}
+
+/* // RESPONSIVE STYLES
+// ================= */
+
+ @media only screen and (max-width: 380px) {
+  h1 {
+    font-size: 50px;
+  }
+
+ }

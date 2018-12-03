@@ -1,8 +1,9 @@
 import React, {Component, Fragment} from 'react';
 import axios from 'axios';
 
-// API KEY FOR GIPHY
+// API KEY & URL FOR GIPHY
 const api_key = 'pX65UNlFkSNlNESWjjpoX92eMzUcwZEs';
+const url = `http://api.giphy.com/v1/gifs/random?tag=motivation&api_key=${api_key}`;
 
 class MotivationalGif extends Component {
   constructor() {
@@ -15,7 +16,6 @@ class MotivationalGif extends Component {
 
   fetchRandomGif = () => {
 
-    const url = `http://api.giphy.com/v1/gifs/random?tag=motivate&api_key=${api_key}`;
     axios.get(url)
       .then(({ data }) =>
         this.setState({ 
@@ -29,8 +29,10 @@ class MotivationalGif extends Component {
   render() {
     return (
       <Fragment>
-        <button onClick={this.fetchRandomGif}>Motivate Me!</button>
-        <img src={this.state.img} alt={this.state.description}/>
+        <button className="hitMe" onClick={this.fetchRandomGif}>Hit me with a motivational GIF!</button>
+        <div>
+          <img src={this.state.img} alt={this.state.description}/>
+        </div>
       </Fragment>
     )
   }

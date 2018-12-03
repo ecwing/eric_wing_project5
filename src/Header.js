@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import Date from './Date.js'
+import Date from './Date.js';
 
 class header extends Component {
     render() {
         return (
             <header>
-                <h1>BuJo To Go!</h1>
-                <h2>Your Convenient Bullet Journal On-The-Go</h2>
+                <div className="titleFlex">
+                    <img src={require("./assets/iphone.svg")} alt="pen icon" />    
+                    <h1>BuJo To Go!</h1>
+                    <img src={require("./assets/pen.svg")} alt="pen icon" />
+                </div>
+                <h2>"Your Convenient Bullet Journal On-The-Go"</h2>
                 <div className="explanation">
                     <ul>
                         <li className="task">Each Bullet is a Task: Things you have to do</li>
