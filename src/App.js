@@ -8,9 +8,6 @@ import Footer from "./Footer";
 //reference to the root of the database
 const dbRef = firebase.database().ref();
 
-// API KEY FOR GIPHY
-const api_key = 'pX65UNlFkSNlNESWjjpoX92eMzUcwZEs';
-
 class App extends Component {
   constructor() {
     super();     // set up our react state
@@ -18,6 +15,7 @@ class App extends Component {
       task: "",
       term: "",
       img: "",
+      bullet: "",
       toDo: {}
     }
   }
@@ -26,18 +24,6 @@ class App extends Component {
     this.setState({ 
       term: event.target.value 
     });
-  }
-
-  handleSubmitGif = (event) => {
-    event.preventDefault();
-    const url = `http://api.giphy.com/v1/gifs/search?q=${this.state.term}&api_key=${api_key}`;
-    fetch(url)
-      .then(response => response.json())
-      .then(data => this.setState({ 
-        term:'', 
-        img: data.data[0].images.fixed_height.url
-      }))
-      .catch(e => console.log('error', e));
   }
 
   componentDidMount() {
@@ -61,14 +47,13 @@ class App extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    //prevents form submit from reloading the page
     const newTask = {
       task: this.state.task,
       type: this.state.bullet,
       datePosted: new Date()
     };
     /* Send the data to Firebase */
-    dbRef.push(newTask)    //This function clears the form/inputs
+    dbRef.push(newTask) //This function clears the form/inputs
     this.setState({
       task: "",
       value: "",
@@ -105,15 +90,17 @@ class App extends Component {
           type="text"
           onChange={this.handleChange}
           id="task"
+          required={true}
           value={this.state.task} />
 
           <select 
             name="Select bullet type" 
+            required={true}
             id="bullet" 
             className="bullet"
             onChange={this.handleType}
-            value={this.state.value}>
-            <option value="" disabled selected className="placeholder">Select A Type</option>
+            value={this.state.bullet}>
+            <option value="" disabled className="placeholder">Select A Type</option>
             <option value="task">Task</option>
             <option value="note">Notes</option>
             <option value="event">Event</option>
@@ -145,19 +132,6 @@ class App extends Component {
             }
           </section>
 
-          <section>
-            <div className="App">
-              <form onSubmit={this.handleSubmitGif}>
-
-                <input value={this.state.term} onChange={this.onChange} />
-
-                {/*want to change to random motivating GIFS */}
-                <button onClick={this.randomGif}>Hit me with a Motivational Gif!</button>
-                
-              </form>
-              <img src={this.state.img} height="200" alt={this.state.term} />
-            </div>            
-          </section>
 
           <Footer />
       </div>
