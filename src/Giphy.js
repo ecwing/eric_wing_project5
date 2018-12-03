@@ -2,8 +2,8 @@ import React, {Component, Fragment} from 'react';
 import axios from 'axios';
 
 // API KEY & URL FOR GIPHY
-const api_key = '5yMAlmU3mqGPeBQwcLBkWVS8gHWPOyb4';
-const url = `http://api.giphy.com/v1/gifs/random?tag=motivation&api_key=${api_key}`;
+const api_key = 'cV1qhEKuQSpyO1w48QB12JYMu71OU9ER';
+const url = `https://api.giphy.com/v1/gifs/random?tag=motivation&api_key=${api_key}`;
 
 class MotivationalGif extends Component {
   constructor() {

@@ -80,7 +80,9 @@ class App extends Component {
 
       <Header />  
 
-        <form action="" onSubmit={this.handleSubmit}>
+        <form 
+          action="" 
+          onSubmit={this.handleSubmit} id="maincontent">
         <div className="userChoice">
           <label htmlFor="task">To Do: </label>
           <input 

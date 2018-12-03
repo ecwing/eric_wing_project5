@@ -5,6 +5,7 @@ class header extends Component {
     render() {
         return (
             <header>
+                <a href="#maincontent" className="skip-link">Skip to main content.</a>
                 <div className="titleFlex">
                     <img src={require("./assets/iphone.svg")} alt="pen icon" />    
                     <h1>BuJo To Go!</h1>
