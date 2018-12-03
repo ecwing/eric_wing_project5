@@ -13,11 +13,7 @@ class MotivationalGif extends Component {
     }
   }
 
-  
-
-
   fetchRandomGif = () => {
-    console.log('fuck you');
 
     const url = `http://api.giphy.com/v1/gifs/random?tag=motivate&api_key=${api_key}`;
     axios.get(url)
