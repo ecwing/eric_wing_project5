@@ -28,6 +28,7 @@ header img {
   align-items: center;
 }
 
+
 /* Acessibility skip link styling */
 /* ============================== */
 .skip-link {
@@ -55,8 +56,6 @@ h1 {
   margin: 10px 0;
 }
 
-
-
 label {
   padding: 10px;
 }
@@ -65,7 +64,8 @@ input {
   text-align: center;
   font-family: 'Patrick Hand', cursive;
   border: none;
-  padding: 2px;
+  padding: 0 2px;
+  border-radius: 3px;
 
 }
 
@@ -111,7 +111,7 @@ list-style-type: circle;
   background: #fff;
   padding: 20px 20px;
   box-shadow: 5px 5px 5px 0 rgba(0,0,0,.26);
-  width: 65%;
+  width: 55%;
   margin: 0 auto;
   margin-bottom: 10px;  
 }
@@ -121,8 +121,10 @@ list-style-type: circle;
   justify-content: space-between;
 }
 
+
 select {
   border: none;
+  padding: 5px;
   border-radius: 5px;
   cursor: pointer;
   text-align: center;
@@ -207,6 +209,12 @@ footer p {
  @media only screen and (max-width: 380px) {
   h1 {
     font-size: 50px;
+  }
+  ul {
+    padding-left: 25px;
+  }
+  .addItem {
+    width: 80%;
   }
 
  }

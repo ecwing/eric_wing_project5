@@ -90,7 +90,6 @@ class App extends Component {
           id="task"
           required={true}
           value={this.state.task} />
-
           <select 
             name="Select bullet type" 
             required={true}

@@ -2,7 +2,7 @@ import React, {Component, Fragment} from 'react';
 import axios from 'axios';
 
 // API KEY & URL FOR GIPHY
-const api_key = 'pX65UNlFkSNlNESWjjpoX92eMzUcwZEs';
+const api_key = '5yMAlmU3mqGPeBQwcLBkWVS8gHWPOyb4';
 const url = `http://api.giphy.com/v1/gifs/random?tag=motivation&api_key=${api_key}`;
 
 class MotivationalGif extends Component {
@@ -31,7 +31,7 @@ class MotivationalGif extends Component {
       <Fragment>
         <button className="hitMe" onClick={this.fetchRandomGif}>Hit me with a motivational GIF!</button>
         <div>
-          <img src={this.state.img} alt={this.state.description}/>
+          <img src={this.state.img} height="300" alt={this.state.description}/>
         </div>
       </Fragment>
     )
